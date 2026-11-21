@@ -1,0 +1,16 @@
+node_modules/
+dist/
+out/
+release/
+*.log
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+*.sqlite
+*.sqlite-journal
+*.db
+coverage/
+.vscode/
+.idea/

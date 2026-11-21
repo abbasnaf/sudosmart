@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 33% 6%;
+    --foreground: 210 25% 93%;
+    --card: 210 26% 9%;
+    --card-foreground: 210 25% 93%;
+    --popover: 210 28% 8%;
+    --popover-foreground: 210 25% 93%;
+    --primary: 203 100% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 20% 15%;
+    --secondary-foreground: 210 20% 90%;
+    --muted: 210 20% 13%;
+    --muted-foreground: 210 12% 62%;
+    --accent: 203 100% 58%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 56%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 18% 17%;
+    --input: 210 18% 17%;
+    --ring: 203 100% 58%;
+    --radius: 0.9rem;
+    --ok: 152 62% 48%;
+    --warn: 38 95% 58%;
+    color-scheme: dark;
+  }
+
+  [data-theme='light'] {
+    --background: 210 33% 97%;
+    --foreground: 215 28% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 28% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 28% 12%;
+    --primary: 205 100% 38%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 24% 93%;
+    --secondary-foreground: 215 28% 18%;
+    --muted: 210 24% 93%;
+    --muted-foreground: 215 14% 42%;
+    --accent: 205 100% 38%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 48%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 205 100% 38%;
+    --ok: 152 62% 36%;
+    --warn: 38 92% 42%;
+    color-scheme: light;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Segoe UI Variable', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    overflow: hidden;
+  }
+
+  ::selection {
+    @apply bg-primary/30;
+  }
+}
+
+@layer utilities {
+  .drag {
+    -webkit-app-region: drag;
+  }
+  .no-drag {
+    -webkit-app-region: no-drag;
+  }
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 999px;
+  }
+  .glass {
+    background: linear-gradient(180deg, hsl(var(--card) / 0.92), hsl(var(--card) / 0.78));
+    backdrop-filter: blur(18px);
+  }
+  .glow {
+    box-shadow: 0 0 0 1px hsl(var(--primary) / 0.18), 0 10px 30px hsl(var(--primary) / 0.12);
+  }
+}
